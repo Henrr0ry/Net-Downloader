@@ -1,0 +1,38 @@
+:root {
+    --on: lime;
+    --off: red;
+    --panel: gray;
+}
+body {
+    margin: 0;
+    width: 200px;
+    height: 500px;
+    background-color: #444;
+}
+.powerbtn {
+    float: right;
+    background: var(--panel);
+    padding: 5px;
+    border-bottom: 5px solid var(--panel);
+    border-radius: 5px;
+}
+#ON, #OFF {
+    height: 30px;
+    width: 60px;
+    border: none;
+    float: left;
+    margin: 0;
+    box-shadow: 0 5px darkgray;
+}
+#ON {
+    background: var(--on);
+    border-radius: 5px 0 0 5px;
+}
+#OFF {
+    background: var(--off);
+    border-radius: 0 5px 5px 0;
+}
+.pressed {
+    transform: translateY(3px);
+    box-shadow: 0 2px darkgray !important;
+}
