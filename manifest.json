@@ -1,0 +1,18 @@
+{
+   "manifest_version": 2,
+   "name": "NetDownloader",
+   "version": "1.0",
+
+   "description": "By Henrr0ry",
+
+   "icons": {
+     "48": "icons/icon.png"
+   },
+
+   "content_scripts": [
+     {
+      "matches": ["*://*"],
+      "js": ["app.js"]
+     }
+    ]
+}
