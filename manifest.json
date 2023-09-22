@@ -1,18 +1,11 @@
 {
-   "manifest_version": 2,
-   "name": "NetDownloader",
-   "version": "1.0",
-
-   "description": "By Henrr0ry",
-
-   "icons": {
-     "48": "icons/icon.png"
-   },
-
-   "content_scripts": [
-     {
-      "matches": ["*://*"],
-      "js": ["app.js"]
-     }
-    ]
+    "name": "Net Downloader",
+    "version": "1.0.0",
+    "description": "Extension to efficiently download data from the web",
+    "manifest_version": 3,
+    "author": "Henrr0ry",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Net Downloader"
+    }
 }
