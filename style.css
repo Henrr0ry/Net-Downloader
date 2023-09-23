@@ -9,12 +9,23 @@ body {
     height: 500px;
     background-color: #444;
 }
-.powerbtn {
-    float: right;
+.logo {
+    float: left;
+}
+.logo img {
+    width: 70px;
+    height: 45px;
+    background: red;
+}
+.panel {
+    float: left;
     background: var(--panel);
     padding: 5px;
-    border-bottom: 5px solid var(--panel);
     border-radius: 5px;
+}
+.powerbtn {
+    float: right !important;
+    border-bottom: 5px solid var(--panel);
 }
 #ON, #OFF {
     height: 30px;
