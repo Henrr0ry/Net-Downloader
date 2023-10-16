@@ -1,14 +1,26 @@
-var turnon = false;
-console.log("app start");
+var btnON = document.getElementById("ON");
+var btnOFF = document.getElementById("OFF");
+var turnon = chrome.storage.local.get(["turnon"], function(result) {
+    return result;
+});
+console.log(turnon);
 
-document.getElementById("ON").addEventListener("click", function () {
-    document.getElementById("ON").classList.add("pressed");
-    document.getElementById("OFF").classList.remove("pressed");
-    console.log("ON");
+btnON.addEventListener("click", function () {
+    btnON.classList.add("pressed");
+    btnOFF.classList.remove("pressed");
+    localStorage.setItem("turnon", "true");
 });
 
-document.getElementById("OFF").addEventListener("click", function () {
-    document.getElementById("OFF").classList.add("pressed");
-    document.getElementById("ON").classList.remove("pressed");
-    console.log("OFF");
+btnOFF.addEventListener("click", function () {
+    btnOFF.classList.add("pressed");
+    btnON.classList.remove("pressed");
+    localStorage.setItem("turnon", "false");
 });
+
+if (turnon == "true") {
+    btnON.classList.add("pressed");
+    btnOFF.classList.remove("pressed");
+}
+document.getElementById("status").innerHTML = turnon;
+//chrome.tabs.create({ url:"https://youtube.com"});
+//chrome.runtime.openOptionsPage();

@@ -4,14 +4,37 @@
   "description": "Tool for efficiently donwloading data from the web.",
   "manifest_version": 3,
   "author": "Henrr0ry",
+  "icons": {
+    "16": "icons/logo.png",
+    "32": "icons/logo.png",
+    "64": "icons/logo.png",
+    "128": "icons/logo.png"
+  },
+  "options_page": "settings.html",
   "action":{
-      "default_popup": "index.html",
-      "default_title": "Net Downloader"
+      "default_popup": "popup.html",
+      "default_title": "Net Downloader",
+      "default_icons": {
+        "16": "icons/logo.png",
+        "32": "icons/logo.png",
+        "64": "icons/logo.png",
+        "128": "icons/logo.png"
+      }
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "activeTab",
+    "cookies",
+    "storage"
   ],
-  "default_icon": {
-    "16": "favicon.png"
-  }
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
 }
