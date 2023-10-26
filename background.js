@@ -1,2 +1,2 @@
-localStorage.setItem("turnon", "false");
-var turnon = localStorage.getItem("turnon");
+var turnon = true;
+chrome.storage.sync.set({ TurnOn: turnon });

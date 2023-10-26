@@ -1,20 +1,20 @@
 var btnON = document.getElementById("ON");
 var btnOFF = document.getElementById("OFF");
-var turnon = chrome.storage.local.get(["turnon"], function(result) {
-    return result;
+var turnon = false;
+chrome.storage.sync.get(['TurnOn'], function(result) {
+    turnon = result.TurnOn;
 });
-console.log(turnon);
 
 btnON.addEventListener("click", function () {
     btnON.classList.add("pressed");
     btnOFF.classList.remove("pressed");
-    localStorage.setItem("turnon", "true");
+    chrome.storage.sync.set({ TurnOn: true});
 });
 
 btnOFF.addEventListener("click", function () {
     btnOFF.classList.add("pressed");
     btnON.classList.remove("pressed");
-    localStorage.setItem("turnon", "false");
+    chrome.storage.sync.set({ TurnOn: turnon});
 });
 
 if (turnon == "true") {
