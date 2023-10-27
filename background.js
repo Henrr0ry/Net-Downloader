@@ -1,2 +1,2 @@
-var turnon = true;
-chrome.storage.sync.set({ TurnOn: turnon });
+//var turnon = true;
+//chrome.storage.sync.set({ TurnOn: turnon });

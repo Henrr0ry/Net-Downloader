@@ -2,6 +2,8 @@
     --on: lime;
     --off: red;
     --panel: gray;
+    --panel-dark: rgb(88, 88, 88);
+    --panel-black: rgb(36, 36, 36);
 }
 body {
     margin: 0;
@@ -10,22 +12,27 @@ body {
     background-color: #444;
 }
 .logo {
-    float: left;
+    width: 44px;
+    height: 44px;
+    text-align: center;
 }
 .logo img {
-    width: 70px;
-    height: 45px;
-    background: red;
+    width: 40px;
+    height: 40px;
+    margin: auto;
 }
 .panel {
     float: left;
     background: var(--panel);
     padding: 5px;
     border-radius: 5px;
+    border: 2px solid var(--panel-dark);
+    box-shadow: 0 5px 0px var(--panel-black);
+    margin: 2px;
 }
 .powerbtn {
+    height: 44px;
     float: right !important;
-    border-bottom: 5px solid var(--panel);
 }
 #ON, #OFF {
     height: 30px;
@@ -33,7 +40,8 @@ body {
     border: none;
     float: left;
     margin: 0;
-    box-shadow: 0 5px darkgray;
+    margin-top: 5px;
+    box-shadow: 0 6px darkgray;
 }
 #ON {
     background: var(--on);
@@ -44,6 +52,6 @@ body {
     border-radius: 0 5px 5px 0;
 }
 .pressed {
-    transform: translateY(3px);
+    transform: translateY(5px);
     box-shadow: 0 2px darkgray !important;
 }
